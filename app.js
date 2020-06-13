@@ -20,6 +20,8 @@ app.use(express.static('public'))
 
 
 
+
+
 //Setting up routes
 //Use this command to add other files with routes
 app.use('/', require('./routes/index'));
