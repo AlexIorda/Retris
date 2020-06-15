@@ -2,7 +2,7 @@
 const express = require("express");
 const hbs = require("express-handlebars");
 const app = express();
-const firebase_admin = require("firebase-admin")
+//const firebase_admin = require("firebase-admin")
 
 //Env variables
 
@@ -27,6 +27,5 @@ app.use(express.static('public'));
 //Setting up routes
 //Use this command to add other files with routes
 app.use('/', require('./routes/index'));
-
 
 app.listen(PORT, console.log("Server started on port ${PORT}"));
