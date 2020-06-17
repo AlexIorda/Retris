@@ -15,11 +15,20 @@ router.get('/', (req, res) => res.render("index", {
     title: "Main page"
 }));
 
+var firebase = require('firebase');
+firebase.initializeApp({
+    databaseURL: 'https://retris-de-zei.firebaseio.com',
+});
+
+var ref = firebase.database().ref('/');
+
 // POST request to submit the final score of the game to the database
 router.post('/', (req, res) => {
   const score = req.body.score;
   console.log(score);
   // now insert the score into the database
+  var obj = {user : score}
+  ref.push(obj)
 });
 
 module.exports = router;
